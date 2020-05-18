@@ -1,0 +1,61 @@
+mkdir djangogirls создание каталога
+cd djangogirls переход в ком. строке в этот каталог
+
+создаем виртуальное окружение под именем myvenv
+python -m venv myvenv
+
+запуск вирт окружения
+myvenv\Scripts\activate
+
+установка джанго
+python -m pip install --upgrade pip 
+	после создаем файл requirements.txt и прописываем в нем:
+	Django~=2.2.4
+pip install -r requirements.txt
+
+создаем новый роект
+django-admin.exe startproject mysite . *важно точку в конце
+
+создание базы данных
+python manage.py migrate
+
+запуск сервера
+python manage.py runserver
+
+тестируем
+127.0.0.1 открываем в браузре 
+
+создание приложения blog
+python manage.py startapp blog
+
+после создания приложения blog говорим джанго, чтобы использовал его. вносим в файл settings в INSTALLED_APPS в конец списка 'blog',
+
+вносим информацю в файл models.py
+
+передаем джанго информацию, что внесены изменения. джанго создает файл с миграцей баз данных
+python manage.py makemigrations blog
+
+модель записи для блога вносим в базу данных
+python manage.py migrate blog
+
+создаем суперюзера(Naira)
+python manage.py createsuperuser
+
+установка git 
+git init
+git config --global user.name "Your Name"
+git config --global user.email you@example.com
+
+
+
+подключение репозитория
+git remote add origin https://github.com/gevorkyannaira/my-first-blog.git
+git push -u origin master
+
+
+подключение на PythonAnhywhere. на сайте выбрать Bash  консоль.
+pip3.6 install --user pythonanywhere
+pa_autoconfigure_django.py https://github.com/gevorkyannaira/my-first-blog.git - подтягивает с гит проект
+
+
+C:\Users\79660\Desktop\Python\Django
