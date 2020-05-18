@@ -41,21 +41,65 @@ python manage.py migrate blog
 создаем суперюзера(Naira)
 python manage.py createsuperuser
 
-установка git 
+установка гит
 git init
 git config --global user.name "Your Name"
 git config --global user.email you@example.com
 
+создание файла .gitignore
+
+для проверки последних изменений в гит
+git status
+
+сохранение изменений в гит
+git add --all .
+git commit -m "My Django Girls app, first commit"
 
 
 подключение репозитория
 git remote add origin https://github.com/gevorkyannaira/my-first-blog.git
 git push -u origin master
 
-
 подключение на PythonAnhywhere. на сайте выбрать Bash  консоль.
-pip3.6 install --user pythonanywhere
-pa_autoconfigure_django.py https://github.com/gevorkyannaira/my-first-blog.git - подтягивает с гит проект
+$ pip3.6 install --user pythonanywhere
+$ pa_autoconfigure_django.py https://github.com/gevorkyannaira/my-first-blog.git - подтягивает с гит проект
+
+создание суперюзера
+$ python manage.py createsuperuser
+
+Посмотреть какие файлы подгружены
+$ ls
+$ ls blog/  (в папке блог)
+
+в файл mysite/urls добавляем урлы из файла при помощи инклуд
+path('', include('blog.urls')),
+Django теперь будет перенаправлять все запросы 'http://127.0.0.1:8000/' к blog.urls и искать там дальнейшие инструкции.
+
+в папке blog создаем файл urls
+в ней прописываем импорт из как файлов
+from django.urls import path
+from . import views
+urlpatterns = [
+    path('', views.post_list, name='post_list'),
+]
+
+view, или представление, — это то место, где мы разместим «логику» работы нашего приложения
+
+Шаблоны сохраняются в директории blog/templates/blog. Для начала создай директорию templates внутри папки blog. Затем создай другую директорию blog внутри папки templates:
+
+Теперь создай файл post_list.html (для начала оставь его пустым) внутри директории blog/templates/blog.
 
 
-C:\Users\79660\Desktop\Python\Django
+
+HTML
+
+<h1>Заголовок</h1> — главный заголовок страницы;
+<h2>Подзаголовок</h2> — для заголовков второго уровня;
+<h3>Заголовок третьего уровня</h3> … и так далее, вплоть до <h6>;
+<p>A paragraph of text</p>
+<em>текст</em> подчёркивает твой текст;
+<strong>текст</strong> — жирный шрифт;
+<br /> — переход на следующую строку (внутрь br тега нельзя ничего поместить);
+<a href="https://djangogirls.org">link</a> создаёт ссылку;
+<ul><li>первый элемент</li><li>второй элемент</li></ul> создаёт список, такой же как этот!
+<div></div> определяет раздел страницы.
