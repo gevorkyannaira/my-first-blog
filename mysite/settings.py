@@ -20,7 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = '+zsol3vy_18l^iy7mpq#c7o4j(h6q))-=vj!x&n9k#+!9&4lxw'
+=======
+SECRET_KEY = '8$c+q8!(avyz^7ss=q#*kre3ao40_uc_dqez=7h18lplgw^)_h'
+>>>>>>> e585743114c1741ec20dc76010f96171f3516589
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -106,7 +110,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-ru'
 
+<<<<<<< HEAD
 TIME_ZONE = 'Europe/Moscow' # часовой пояс
+=======
+TIME_ZONE = 'Europe/Moscow'
+>>>>>>> e585743114c1741ec20dc76010f96171f3516589
 
 USE_I18N = True
 
@@ -119,8 +127,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+<<<<<<< HEAD
 STATIC_ROOT = os.path.join(BASE_DIR, 'static') # 
 
 MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+=======
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+>>>>>>> e585743114c1741ec20dc76010f96171f3516589

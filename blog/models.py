@@ -15,4 +15,8 @@ class Post(models.Model):
         self.save()
 
     def __str__(self):
+<<<<<<< HEAD
         return self.title
+=======
+        return self.title
+>>>>>>> e585743114c1741ec20dc76010f96171f3516589
